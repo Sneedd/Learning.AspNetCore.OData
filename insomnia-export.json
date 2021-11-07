@@ -1,0 +1,197 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-11-06T17:50:48.271Z",
+  "__export_source": "insomnia.desktop.app:v2021.6.0",
+  "resources": [
+    {
+      "_id": "req_26c02417b1414ce786d68969bf1c0073",
+      "parentId": "fld_98b3e6a23f724dce9403302a51c0db85",
+      "modified": 1636220926775,
+      "created": 1636220912314,
+      "url": "{{ _.host }}/odata/City",
+      "name": "Get City",
+      "description": "",
+      "method": "GET",
+      "body": {
+      },
+      "parameters": [
+      ],
+      "headers": [
+      ],
+      "authentication": {
+      },
+      "metaSortKey": -1636220912314,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_98b3e6a23f724dce9403302a51c0db85",
+      "parentId": "wrk_db5fdf09ac9543f4a579a2b9167a1e94",
+      "modified": 1636220512988,
+      "created": 1636220512988,
+      "name": "Queries",
+      "description": "",
+      "environment": {
+      },
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1636220512988,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_db5fdf09ac9543f4a579a2b9167a1e94",
+      "parentId": null,
+      "modified": 1636220484050,
+      "created": 1636220484050,
+      "name": "Learning.AspNetCore.OData",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_ed5b7459d13c48ae9553fdda10924e4e",
+      "parentId": "fld_98b3e6a23f724dce9403302a51c0db85",
+      "modified": 1636220898670,
+      "created": 1636220874007,
+      "url": "{{ _.host }}/odata/Country",
+      "name": "Get Countries",
+      "description": "",
+      "method": "GET",
+      "body": {
+      },
+      "parameters": [
+      ],
+      "headers": [
+      ],
+      "authentication": {
+      },
+      "metaSortKey": -1636220874007,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b88d855eba304e5db417eee6b8714ace",
+      "parentId": "fld_98b3e6a23f724dce9403302a51c0db85",
+      "modified": 1636220753560,
+      "created": 1636220536748,
+      "url": "{{ _.host }}/odata/Continent",
+      "name": "Get Continents",
+      "description": "",
+      "method": "GET",
+      "body": {
+      },
+      "parameters": [
+      ],
+      "headers": [
+      ],
+      "authentication": {
+      },
+      "metaSortKey": -1636220536748,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b53df1e09be74837a5d44c5c88db7a8a",
+      "parentId": "fld_98b3e6a23f724dce9403302a51c0db85",
+      "modified": 1636221010713,
+      "created": 1636220981579,
+      "url": "{{ _.host }}/odata/Continent?$filter=startswith(Name, 'A')",
+      "name": "GetWith Filter",
+      "description": "",
+      "method": "GET",
+      "body": {
+      },
+      "parameters": [
+      ],
+      "headers": [
+      ],
+      "authentication": {
+      },
+      "metaSortKey": -1636220536698,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_aaef3f6c0e5b2bc331a0708fb83ede3c3522b848",
+      "parentId": "wrk_db5fdf09ac9543f4a579a2b9167a1e94",
+      "modified": 1636220806810,
+      "created": 1636220484059,
+      "name": "Base Environment",
+      "data": {
+        "host": "http://localhost:5000"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "host"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1636220484059,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_aaef3f6c0e5b2bc331a0708fb83ede3c3522b848",
+      "parentId": "wrk_db5fdf09ac9543f4a579a2b9167a1e94",
+      "modified": 1636220484061,
+      "created": 1636220484061,
+      "name": "Default Jar",
+      "cookies": [
+      ],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_d6d54d394f6c4facaa74e54aee012459",
+      "parentId": "wrk_db5fdf09ac9543f4a579a2b9167a1e94",
+      "modified": 1636220484051,
+      "created": 1636220484051,
+      "fileName": "Learning.AspNetCore.OData",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_77082c1326fd4a3aa87f6cc9d828cd48",
+      "parentId": "env_aaef3f6c0e5b2bc331a0708fb83ede3c3522b848",
+      "modified": 1636220819188,
+      "created": 1636220776479,
+      "name": "Learning.AspNetCore.OData",
+      "data": {
+        "host": "http://localhost:5000"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "host"
+        ]
+      },
+      "color": "#9f0fff",
+      "isPrivate": false,
+      "metaSortKey": 1636220776479,
+      "_type": "environment"
+    }
+  ]
+}
