@@ -33,6 +33,7 @@ namespace Learning.AspNetCore.OData
             {
                 string tempDb = @"C:\temp\world.db";
                 options.UseSqlite($"DataSource={tempDb}");
+                options.EnableSensitiveDataLogging();
             });
             services.AddOData();
             services.AddControllers();

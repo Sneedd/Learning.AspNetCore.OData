@@ -18,30 +18,34 @@ namespace Learning.AspNetCore.OData.Controllers
             this.DbContext = context;
         }
 
-        [HttpGet]
+        //[HttpGet]
         [EnableQuery]
         public IQueryable<Tentity> Get()
         {
             return this.DbContext.Set<Tentity>();
         }
 
-        [HttpGet]
+        //[HttpGet]
         [EnableQuery]
         public SingleResult<Tentity> Get([FromODataUri] int key)
         {
             return SingleResult.Create(this.DbContext.Set<Tentity>().Where(a => a.Id == key));
         }
 
-        [HttpPost]
-        public IActionResult Post(Tentity entity)
+        //[HttpPost]
+        public IActionResult Post([FromBody] Tentity entity)
         {
+            if (entity.Id == 0)
+            {
+                entity.Id = this.DbContext.Set<Tentity>().Max(a => a.Id) + 1;
+            }
             this.DbContext.Add(entity);
             this.DbContext.SaveChanges();
             return this.Created(entity);
         }
 
-        [HttpPatch]
-        public IActionResult Patch(int key, Delta<Tentity> delta)
+        //[HttpPatch]
+        public IActionResult Patch([FromODataUri] int key, [FromBody] Delta<Tentity> delta)
         {
             Tentity entity = this.DbContext.Find<Tentity>(key);
             delta.CopyChangedValues(entity);
@@ -50,8 +54,8 @@ namespace Learning.AspNetCore.OData.Controllers
             return this.Updated(entity);
         }
 
-        [HttpDelete]
-        public IActionResult Delete(Tentity entity)
+        //[HttpDelete]
+        public IActionResult Delete([FromBody] Tentity entity)
         {
             this.DbContext.Remove(entity);
             this.DbContext.SaveChanges();
