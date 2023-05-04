@@ -1,13 +1,13 @@
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
-    <Schema Namespace="Learning.AspNetCore.OData.Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema Namespace="Learning.OData.Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
       <EntityType Name="Continent">
         <Key>
           <PropertyRef Name="Id" />
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
-        <NavigationProperty Name="Countries" Type="Collection(Learning.AspNetCore.OData.Entities.Country)" />
+        <NavigationProperty Name="Countries" Type="Collection(Learning.OData.Entities.Country)" />
       </EntityType>
       <EntityType Name="Country">
         <Key>
@@ -16,10 +16,10 @@
         <Property Name="Id" Type="Edm.Int32" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
         <Property Name="ContinentId" Type="Edm.Int32" />
-        <NavigationProperty Name="Continent" Type="Learning.AspNetCore.OData.Entities.Continent">
+        <NavigationProperty Name="Continent" Type="Learning.OData.Entities.Continent">
           <ReferentialConstraint Property="ContinentId" ReferencedProperty="Id" />
         </NavigationProperty>
-        <NavigationProperty Name="Cities" Type="Collection(Learning.AspNetCore.OData.Entities.City)" />
+        <NavigationProperty Name="Cities" Type="Collection(Learning.OData.Entities.City)" />
       </EntityType>
       <EntityType Name="City">
         <Key>
@@ -28,21 +28,19 @@
         <Property Name="Id" Type="Edm.Int32" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
         <Property Name="CountryId" Type="Edm.Int32" />
-        <NavigationProperty Name="Country" Type="Learning.AspNetCore.OData.Entities.Country">
+        <NavigationProperty Name="Country" Type="Learning.OData.Entities.Country">
           <ReferentialConstraint Property="CountryId" ReferencedProperty="Id" />
         </NavigationProperty>
       </EntityType>
-    </Schema>
-    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
       <EntityContainer Name="Container">
-        <EntitySet Name="Continent" EntityType="Learning.AspNetCore.OData.Entities.Continent">
+        <EntitySet Name="Continent" EntityType="Learning.OData.Entities.Continent">
           <NavigationPropertyBinding Path="Countries" Target="Country" />
         </EntitySet>
-        <EntitySet Name="Country" EntityType="Learning.AspNetCore.OData.Entities.Country">
+        <EntitySet Name="Country" EntityType="Learning.OData.Entities.Country">
           <NavigationPropertyBinding Path="Cities" Target="City" />
           <NavigationPropertyBinding Path="Continent" Target="Continent" />
         </EntitySet>
-        <EntitySet Name="City" EntityType="Learning.AspNetCore.OData.Entities.City">
+        <EntitySet Name="City" EntityType="Learning.OData.Entities.City">
           <NavigationPropertyBinding Path="Country" Target="Country" />
         </EntitySet>
       </EntityContainer>

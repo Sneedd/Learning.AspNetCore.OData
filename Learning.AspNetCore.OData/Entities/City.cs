@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Learning.AspNetCore.OData.Entities
 {
-    [Table("City")]
+    [Table("Cities")]
     public class City : IEntity
     {
         [Key, Column("Id")]

@@ -8,13 +8,22 @@
   "MultiProjectConfigurations": {
     "Service + CommandLine": {
       "Projects": {
-        "Learning.AspNetCore.OData.Service": {},
+        "Learning.AspNetCore.OData.Service": {
+          "ProfileName": "Learning.AspNetCore.OData"
+        },
         "Learning.OData.Client": {}
       }
     },
     "Service": {
       "Projects": {
-        "Learning.AspNetCore.OData.Service": {}        
+        "Learning.AspNetCore.OData.Service": {
+          "ProfileName": "Learning.AspNetCore.OData"
+        }
+      }
+    },
+    "CommandLine": {
+      "Projects": {
+        "Learning.OData.Client": {}
       }
     }
   }

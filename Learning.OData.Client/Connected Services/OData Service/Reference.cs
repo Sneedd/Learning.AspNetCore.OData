@@ -8,9 +8,205 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 07.11.2021 21:17:07
-namespace Learning.AspNetCore.OData.Entities
+// Generation date: 09.11.2021 16:12:44
+namespace Learning.OData.Entities
 {
+    /// <summary>
+    /// There are no comments for Container in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("Container")]
+    public partial class Container : global::Microsoft.OData.Client.DataServiceContext
+    {
+        /// <summary>
+        /// Initialize a new Container object.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        public Container(global::System.Uri serviceRoot) :
+                base(serviceRoot, global::Microsoft.OData.Client.ODataProtocolVersion.V4)
+        {
+            this.ResolveName = new global::System.Func<global::System.Type, string>(this.ResolveNameFromType);
+            this.ResolveType = new global::System.Func<string, global::System.Type>(this.ResolveTypeFromName);
+            this.OnContextCreated();
+            this.Format.LoadServiceModel = GeneratedEdmModel.GetInstance;
+            this.Format.UseJson();
+        }
+        partial void OnContextCreated();
+        /// <summary>
+        /// Since the namespace configured for this service reference
+        /// in Visual Studio is different from the one indicated in the
+        /// server schema, use type-mappers to map between the two.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        protected global::System.Type ResolveTypeFromName(string typeName)
+        {
+            global::System.Type resolvedType = this.DefaultResolveType(typeName, "Learning.OData.Entities", "Learning.OData.Entities");
+            if ((resolvedType != null))
+            {
+                return resolvedType;
+            }
+            return null;
+        }
+        /// <summary>
+        /// Since the namespace configured for this service reference
+        /// in Visual Studio is different from the one indicated in the
+        /// server schema, use type-mappers to map between the two.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        protected string ResolveNameFromType(global::System.Type clientType)
+        {
+            global::Microsoft.OData.Client.OriginalNameAttribute originalNameAttribute = (global::Microsoft.OData.Client.OriginalNameAttribute)global::System.Linq.Enumerable.SingleOrDefault(global::Microsoft.OData.Client.Utility.GetCustomAttributes(clientType, typeof(global::Microsoft.OData.Client.OriginalNameAttribute), true));
+            if (clientType.Namespace.Equals("Learning.OData.Entities", global::System.StringComparison.Ordinal))
+            {
+                if (originalNameAttribute != null)
+                {
+                    return string.Concat("Learning.OData.Entities.", originalNameAttribute.OriginalName);
+                }
+                return string.Concat("Learning.OData.Entities.", clientType.Name);
+            }
+            return null;
+        }
+        /// <summary>
+        /// There are no comments for Continent in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Continent")]
+        public virtual global::Microsoft.OData.Client.DataServiceQuery<Continent> Continent
+        {
+            get
+            {
+                if ((this._Continent == null))
+                {
+                    this._Continent = base.CreateQuery<Continent>("Continent");
+                }
+                return this._Continent;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::Microsoft.OData.Client.DataServiceQuery<Continent> _Continent;
+        /// <summary>
+        /// There are no comments for Country in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Country")]
+        public virtual global::Microsoft.OData.Client.DataServiceQuery<Country> Country
+        {
+            get
+            {
+                if ((this._Country == null))
+                {
+                    this._Country = base.CreateQuery<Country>("Country");
+                }
+                return this._Country;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::Microsoft.OData.Client.DataServiceQuery<Country> _Country;
+        /// <summary>
+        /// There are no comments for City in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("City")]
+        public virtual global::Microsoft.OData.Client.DataServiceQuery<City> City
+        {
+            get
+            {
+                if ((this._City == null))
+                {
+                    this._City = base.CreateQuery<City>("City");
+                }
+                return this._City;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::Microsoft.OData.Client.DataServiceQuery<City> _City;
+        /// <summary>
+        /// There are no comments for Continent in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        public virtual void AddToContinent(Continent continent)
+        {
+            base.AddObject("Continent", continent);
+        }
+        /// <summary>
+        /// There are no comments for Country in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        public virtual void AddToCountry(Country country)
+        {
+            base.AddObject("Country", country);
+        }
+        /// <summary>
+        /// There are no comments for City in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        public virtual void AddToCity(City city)
+        {
+            base.AddObject("City", city);
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private abstract class GeneratedEdmModel
+        {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+            private static global::Microsoft.OData.Edm.IEdmModel ParsedModel = LoadModelFromString();
+
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+            private const string filePath = @"OData ServiceCsdl.xml";
+
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+            public static global::Microsoft.OData.Edm.IEdmModel GetInstance()
+            {
+                return ParsedModel;
+            }
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+            private static global::Microsoft.OData.Edm.IEdmModel LoadModelFromString()
+            {
+                global::System.Xml.XmlReader reader = CreateXmlReader();
+                try
+                {
+                    global::System.Collections.Generic.IEnumerable<global::Microsoft.OData.Edm.Validation.EdmError> errors;
+                    global::Microsoft.OData.Edm.IEdmModel edmModel;
+
+                    if (!global::Microsoft.OData.Edm.Csdl.CsdlReader.TryParse(reader, true, out edmModel, out errors))
+                    {
+	                    global::System.Text.StringBuilder errorMessages = new global::System.Text.StringBuilder();
+	                    foreach (var error in errors)
+	                    {
+		                    errorMessages.Append(error.ErrorMessage);
+		                    errorMessages.Append("; ");
+	                    }
+	                    throw new global::System.InvalidOperationException(errorMessages.ToString());
+                    }
+
+                    return edmModel;
+                }
+                finally
+                {
+                    ((global::System.IDisposable)(reader)).Dispose();
+                }
+            }
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+            private static global::System.Xml.XmlReader CreateXmlReader(string edmxToParse)
+            {
+                return global::System.Xml.XmlReader.Create(new global::System.IO.StringReader(edmxToParse));
+            }
+
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+            private static global::System.Xml.XmlReader CreateXmlReader()
+            {
+                try
+                {
+                    var assembly = global::System.Reflection.Assembly.GetExecutingAssembly();
+                    var resourcePath = global::System.Linq.Enumerable.Single(assembly.GetManifestResourceNames(), str => str.EndsWith(filePath));
+                    global::System.IO.Stream stream = assembly.GetManifestResourceStream(resourcePath);
+                    return global::System.Xml.XmlReader.Create(new global::System.IO.StreamReader(stream));
+                }
+                catch(global::System.Xml.XmlException e)
+                {
+                    throw new global::System.Xml.XmlException("Failed to create an XmlReader from the stream. Check if the resource exists.", e);
+                }
+            }
+        }
+    }
     /// <summary>
     /// There are no comments for ContinentSingle in the schema.
     /// </summary>
@@ -40,7 +236,7 @@ namespace Learning.AspNetCore.OData.Entities
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Countries")]
-        public virtual global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.Country> Countries
+        public virtual global::Microsoft.OData.Client.DataServiceQuery<global::Learning.OData.Entities.Country> Countries
         {
             get
             {
@@ -50,13 +246,13 @@ namespace Learning.AspNetCore.OData.Entities
                 }
                 if ((this._Countries == null))
                 {
-                    this._Countries = Context.CreateQuery<global::Learning.AspNetCore.OData.Entities.Country>(GetPath("Countries"));
+                    this._Countries = Context.CreateQuery<global::Learning.OData.Entities.Country>(GetPath("Countries"));
                 }
                 return this._Countries;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.Country> _Countries;
+        private global::Microsoft.OData.Client.DataServiceQuery<global::Learning.OData.Entities.Country> _Countries;
     }
     /// <summary>
     /// There are no comments for Continent in the schema.
@@ -65,6 +261,7 @@ namespace Learning.AspNetCore.OData.Entities
     /// Id
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.EntitySet("Continent")]
     [global::Microsoft.OData.Client.OriginalNameAttribute("Continent")]
     public partial class Continent : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
@@ -134,7 +331,7 @@ namespace Learning.AspNetCore.OData.Entities
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
 
         [global::Microsoft.OData.Client.OriginalNameAttribute("Countries")]
-        public virtual global::Microsoft.OData.Client.DataServiceCollection<global::Learning.AspNetCore.OData.Entities.Country> Countries
+        public virtual global::Microsoft.OData.Client.DataServiceCollection<global::Learning.OData.Entities.Country> Countries
         {
             get
             {
@@ -149,8 +346,8 @@ namespace Learning.AspNetCore.OData.Entities
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::Learning.AspNetCore.OData.Entities.Country> _Countries = new global::Microsoft.OData.Client.DataServiceCollection<global::Learning.AspNetCore.OData.Entities.Country>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnCountriesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::Learning.AspNetCore.OData.Entities.Country> value);
+        private global::Microsoft.OData.Client.DataServiceCollection<global::Learning.OData.Entities.Country> _Countries = new global::Microsoft.OData.Client.DataServiceCollection<global::Learning.OData.Entities.Country>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnCountriesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::Learning.OData.Entities.Country> value);
         partial void OnCountriesChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
@@ -199,7 +396,7 @@ namespace Learning.AspNetCore.OData.Entities
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Continent")]
-        public virtual global::Learning.AspNetCore.OData.Entities.ContinentSingle Continent
+        public virtual global::Learning.OData.Entities.ContinentSingle Continent
         {
             get
             {
@@ -209,19 +406,19 @@ namespace Learning.AspNetCore.OData.Entities
                 }
                 if ((this._Continent == null))
                 {
-                    this._Continent = new global::Learning.AspNetCore.OData.Entities.ContinentSingle(this.Context, GetPath("Continent"));
+                    this._Continent = new global::Learning.OData.Entities.ContinentSingle(this.Context, GetPath("Continent"));
                 }
                 return this._Continent;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Learning.AspNetCore.OData.Entities.ContinentSingle _Continent;
+        private global::Learning.OData.Entities.ContinentSingle _Continent;
         /// <summary>
         /// There are no comments for Cities in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Cities")]
-        public virtual global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.City> Cities
+        public virtual global::Microsoft.OData.Client.DataServiceQuery<global::Learning.OData.Entities.City> Cities
         {
             get
             {
@@ -231,13 +428,13 @@ namespace Learning.AspNetCore.OData.Entities
                 }
                 if ((this._Cities == null))
                 {
-                    this._Cities = Context.CreateQuery<global::Learning.AspNetCore.OData.Entities.City>(GetPath("Cities"));
+                    this._Cities = Context.CreateQuery<global::Learning.OData.Entities.City>(GetPath("Cities"));
                 }
                 return this._Cities;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.City> _Cities;
+        private global::Microsoft.OData.Client.DataServiceQuery<global::Learning.OData.Entities.City> _Cities;
     }
     /// <summary>
     /// There are no comments for Country in the schema.
@@ -246,6 +443,7 @@ namespace Learning.AspNetCore.OData.Entities
     /// Id
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.EntitySet("Country")]
     [global::Microsoft.OData.Client.OriginalNameAttribute("Country")]
     public partial class Country : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
@@ -339,7 +537,7 @@ namespace Learning.AspNetCore.OData.Entities
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
 
         [global::Microsoft.OData.Client.OriginalNameAttribute("Continent")]
-        public virtual global::Learning.AspNetCore.OData.Entities.Continent Continent
+        public virtual global::Learning.OData.Entities.Continent Continent
         {
             get
             {
@@ -354,8 +552,8 @@ namespace Learning.AspNetCore.OData.Entities
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Learning.AspNetCore.OData.Entities.Continent _Continent;
-        partial void OnContinentChanging(global::Learning.AspNetCore.OData.Entities.Continent value);
+        private global::Learning.OData.Entities.Continent _Continent;
+        partial void OnContinentChanging(global::Learning.OData.Entities.Continent value);
         partial void OnContinentChanged();
         /// <summary>
         /// There are no comments for Property Cities in the schema.
@@ -363,7 +561,7 @@ namespace Learning.AspNetCore.OData.Entities
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
 
         [global::Microsoft.OData.Client.OriginalNameAttribute("Cities")]
-        public virtual global::Microsoft.OData.Client.DataServiceCollection<global::Learning.AspNetCore.OData.Entities.City> Cities
+        public virtual global::Microsoft.OData.Client.DataServiceCollection<global::Learning.OData.Entities.City> Cities
         {
             get
             {
@@ -378,8 +576,8 @@ namespace Learning.AspNetCore.OData.Entities
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::Learning.AspNetCore.OData.Entities.City> _Cities = new global::Microsoft.OData.Client.DataServiceCollection<global::Learning.AspNetCore.OData.Entities.City>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnCitiesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::Learning.AspNetCore.OData.Entities.City> value);
+        private global::Microsoft.OData.Client.DataServiceCollection<global::Learning.OData.Entities.City> _Cities = new global::Microsoft.OData.Client.DataServiceCollection<global::Learning.OData.Entities.City>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnCitiesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::Learning.OData.Entities.City> value);
         partial void OnCitiesChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
@@ -428,7 +626,7 @@ namespace Learning.AspNetCore.OData.Entities
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Country")]
-        public virtual global::Learning.AspNetCore.OData.Entities.CountrySingle Country
+        public virtual global::Learning.OData.Entities.CountrySingle Country
         {
             get
             {
@@ -438,13 +636,13 @@ namespace Learning.AspNetCore.OData.Entities
                 }
                 if ((this._Country == null))
                 {
-                    this._Country = new global::Learning.AspNetCore.OData.Entities.CountrySingle(this.Context, GetPath("Country"));
+                    this._Country = new global::Learning.OData.Entities.CountrySingle(this.Context, GetPath("Country"));
                 }
                 return this._Country;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Learning.AspNetCore.OData.Entities.CountrySingle _Country;
+        private global::Learning.OData.Entities.CountrySingle _Country;
     }
     /// <summary>
     /// There are no comments for City in the schema.
@@ -453,6 +651,7 @@ namespace Learning.AspNetCore.OData.Entities
     /// Id
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.EntitySet("City")]
     [global::Microsoft.OData.Client.OriginalNameAttribute("City")]
     public partial class City : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
@@ -546,7 +745,7 @@ namespace Learning.AspNetCore.OData.Entities
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
 
         [global::Microsoft.OData.Client.OriginalNameAttribute("Country")]
-        public virtual global::Learning.AspNetCore.OData.Entities.Country Country
+        public virtual global::Learning.OData.Entities.Country Country
         {
             get
             {
@@ -561,8 +760,8 @@ namespace Learning.AspNetCore.OData.Entities
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Learning.AspNetCore.OData.Entities.Country _Country;
-        partial void OnCountryChanging(global::Learning.AspNetCore.OData.Entities.Country value);
+        private global::Learning.OData.Entities.Country _Country;
+        partial void OnCountryChanging(global::Learning.OData.Entities.Country value);
         partial void OnCountryChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
@@ -588,285 +787,73 @@ namespace Learning.AspNetCore.OData.Entities
     public static class ExtensionMethods
     {
         /// <summary>
-        /// Get an entity of type global::Learning.AspNetCore.OData.Entities.Continent as global::Learning.AspNetCore.OData.Entities.ContinentSingle specified by key from an entity set
+        /// Get an entity of type global::Learning.OData.Entities.Continent as global::Learning.OData.Entities.ContinentSingle specified by key from an entity set
         /// </summary>
         /// <param name="_source">source entity set</param>
         /// <param name="_keys">dictionary with the names and values of keys</param>
-        public static global::Learning.AspNetCore.OData.Entities.ContinentSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.Continent> _source, global::System.Collections.Generic.IDictionary<string, object> _keys)
+        public static global::Learning.OData.Entities.ContinentSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.OData.Entities.Continent> _source, global::System.Collections.Generic.IDictionary<string, object> _keys)
         {
-            return new global::Learning.AspNetCore.OData.Entities.ContinentSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+            return new global::Learning.OData.Entities.ContinentSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
         }
         /// <summary>
-        /// Get an entity of type global::Learning.AspNetCore.OData.Entities.Continent as global::Learning.AspNetCore.OData.Entities.ContinentSingle specified by key from an entity set
+        /// Get an entity of type global::Learning.OData.Entities.Continent as global::Learning.OData.Entities.ContinentSingle specified by key from an entity set
         /// </summary>
         /// <param name="_source">source entity set</param>
         /// <param name="id">The value of id</param>
-        public static global::Learning.AspNetCore.OData.Entities.ContinentSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.Continent> _source,
+        public static global::Learning.OData.Entities.ContinentSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.OData.Entities.Continent> _source,
             int id)
         {
             global::System.Collections.Generic.IDictionary<string, object> _keys = new global::System.Collections.Generic.Dictionary<string, object>
             {
                 { "Id", id }
             };
-            return new global::Learning.AspNetCore.OData.Entities.ContinentSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+            return new global::Learning.OData.Entities.ContinentSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
         }
         /// <summary>
-        /// Get an entity of type global::Learning.AspNetCore.OData.Entities.Country as global::Learning.AspNetCore.OData.Entities.CountrySingle specified by key from an entity set
+        /// Get an entity of type global::Learning.OData.Entities.Country as global::Learning.OData.Entities.CountrySingle specified by key from an entity set
         /// </summary>
         /// <param name="_source">source entity set</param>
         /// <param name="_keys">dictionary with the names and values of keys</param>
-        public static global::Learning.AspNetCore.OData.Entities.CountrySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.Country> _source, global::System.Collections.Generic.IDictionary<string, object> _keys)
+        public static global::Learning.OData.Entities.CountrySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.OData.Entities.Country> _source, global::System.Collections.Generic.IDictionary<string, object> _keys)
         {
-            return new global::Learning.AspNetCore.OData.Entities.CountrySingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+            return new global::Learning.OData.Entities.CountrySingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
         }
         /// <summary>
-        /// Get an entity of type global::Learning.AspNetCore.OData.Entities.Country as global::Learning.AspNetCore.OData.Entities.CountrySingle specified by key from an entity set
+        /// Get an entity of type global::Learning.OData.Entities.Country as global::Learning.OData.Entities.CountrySingle specified by key from an entity set
         /// </summary>
         /// <param name="_source">source entity set</param>
         /// <param name="id">The value of id</param>
-        public static global::Learning.AspNetCore.OData.Entities.CountrySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.Country> _source,
+        public static global::Learning.OData.Entities.CountrySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.OData.Entities.Country> _source,
             int id)
         {
             global::System.Collections.Generic.IDictionary<string, object> _keys = new global::System.Collections.Generic.Dictionary<string, object>
             {
                 { "Id", id }
             };
-            return new global::Learning.AspNetCore.OData.Entities.CountrySingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+            return new global::Learning.OData.Entities.CountrySingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
         }
         /// <summary>
-        /// Get an entity of type global::Learning.AspNetCore.OData.Entities.City as global::Learning.AspNetCore.OData.Entities.CitySingle specified by key from an entity set
+        /// Get an entity of type global::Learning.OData.Entities.City as global::Learning.OData.Entities.CitySingle specified by key from an entity set
         /// </summary>
         /// <param name="_source">source entity set</param>
         /// <param name="_keys">dictionary with the names and values of keys</param>
-        public static global::Learning.AspNetCore.OData.Entities.CitySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.City> _source, global::System.Collections.Generic.IDictionary<string, object> _keys)
+        public static global::Learning.OData.Entities.CitySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.OData.Entities.City> _source, global::System.Collections.Generic.IDictionary<string, object> _keys)
         {
-            return new global::Learning.AspNetCore.OData.Entities.CitySingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+            return new global::Learning.OData.Entities.CitySingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
         }
         /// <summary>
-        /// Get an entity of type global::Learning.AspNetCore.OData.Entities.City as global::Learning.AspNetCore.OData.Entities.CitySingle specified by key from an entity set
+        /// Get an entity of type global::Learning.OData.Entities.City as global::Learning.OData.Entities.CitySingle specified by key from an entity set
         /// </summary>
         /// <param name="_source">source entity set</param>
         /// <param name="id">The value of id</param>
-        public static global::Learning.AspNetCore.OData.Entities.CitySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.City> _source,
+        public static global::Learning.OData.Entities.CitySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Learning.OData.Entities.City> _source,
             int id)
         {
             global::System.Collections.Generic.IDictionary<string, object> _keys = new global::System.Collections.Generic.Dictionary<string, object>
             {
                 { "Id", id }
             };
-            return new global::Learning.AspNetCore.OData.Entities.CitySingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
-        }
-    }
-}
-namespace Default
-{
-    /// <summary>
-    /// There are no comments for Container in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("Container")]
-    public partial class Container : global::Microsoft.OData.Client.DataServiceContext
-    {
-        /// <summary>
-        /// Initialize a new Container object.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        public Container(global::System.Uri serviceRoot) :
-                base(serviceRoot, global::Microsoft.OData.Client.ODataProtocolVersion.V4)
-        {
-            this.ResolveName = new global::System.Func<global::System.Type, string>(this.ResolveNameFromType);
-            this.ResolveType = new global::System.Func<string, global::System.Type>(this.ResolveTypeFromName);
-            this.OnContextCreated();
-            this.Format.LoadServiceModel = GeneratedEdmModel.GetInstance;
-            this.Format.UseJson();
-        }
-        partial void OnContextCreated();
-        /// <summary>
-        /// Since the namespace configured for this service reference
-        /// in Visual Studio is different from the one indicated in the
-        /// server schema, use type-mappers to map between the two.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        protected global::System.Type ResolveTypeFromName(string typeName)
-        {
-            global::System.Type resolvedType = this.DefaultResolveType(typeName, "Learning.AspNetCore.OData.Entities", "Learning.AspNetCore.OData.Entities");
-            if ((resolvedType != null))
-            {
-                return resolvedType;
-            }
-            resolvedType = this.DefaultResolveType(typeName, "Default", "Default");
-            if ((resolvedType != null))
-            {
-                return resolvedType;
-            }
-            return null;
-        }
-        /// <summary>
-        /// Since the namespace configured for this service reference
-        /// in Visual Studio is different from the one indicated in the
-        /// server schema, use type-mappers to map between the two.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        protected string ResolveNameFromType(global::System.Type clientType)
-        {
-            global::Microsoft.OData.Client.OriginalNameAttribute originalNameAttribute = (global::Microsoft.OData.Client.OriginalNameAttribute)global::System.Linq.Enumerable.SingleOrDefault(global::Microsoft.OData.Client.Utility.GetCustomAttributes(clientType, typeof(global::Microsoft.OData.Client.OriginalNameAttribute), true));
-            if (clientType.Namespace.Equals("Learning.AspNetCore.OData.Entities", global::System.StringComparison.Ordinal))
-            {
-                if (originalNameAttribute != null)
-                {
-                    return string.Concat("Learning.AspNetCore.OData.Entities.", originalNameAttribute.OriginalName);
-                }
-                return string.Concat("Learning.AspNetCore.OData.Entities.", clientType.Name);
-            }
-            if (clientType.Namespace.Equals("Default", global::System.StringComparison.Ordinal))
-            {
-                if (originalNameAttribute != null)
-                {
-                    return string.Concat("Default.", originalNameAttribute.OriginalName);
-                }
-                return string.Concat("Default.", clientType.Name);
-            }
-            return null;
-        }
-        /// <summary>
-        /// There are no comments for Continent in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Continent")]
-        public virtual global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.Continent> Continent
-        {
-            get
-            {
-                if ((this._Continent == null))
-                {
-                    this._Continent = base.CreateQuery<global::Learning.AspNetCore.OData.Entities.Continent>("Continent");
-                }
-                return this._Continent;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.Continent> _Continent;
-        /// <summary>
-        /// There are no comments for Country in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Country")]
-        public virtual global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.Country> Country
-        {
-            get
-            {
-                if ((this._Country == null))
-                {
-                    this._Country = base.CreateQuery<global::Learning.AspNetCore.OData.Entities.Country>("Country");
-                }
-                return this._Country;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.Country> _Country;
-        /// <summary>
-        /// There are no comments for City in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("City")]
-        public virtual global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.City> City
-        {
-            get
-            {
-                if ((this._City == null))
-                {
-                    this._City = base.CreateQuery<global::Learning.AspNetCore.OData.Entities.City>("City");
-                }
-                return this._City;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::Learning.AspNetCore.OData.Entities.City> _City;
-        /// <summary>
-        /// There are no comments for Continent in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        public virtual void AddToContinent(global::Learning.AspNetCore.OData.Entities.Continent continent)
-        {
-            base.AddObject("Continent", continent);
-        }
-        /// <summary>
-        /// There are no comments for Country in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        public virtual void AddToCountry(global::Learning.AspNetCore.OData.Entities.Country country)
-        {
-            base.AddObject("Country", country);
-        }
-        /// <summary>
-        /// There are no comments for City in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        public virtual void AddToCity(global::Learning.AspNetCore.OData.Entities.City city)
-        {
-            base.AddObject("City", city);
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-        private abstract class GeneratedEdmModel
-        {
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-            private static global::Microsoft.OData.Edm.IEdmModel ParsedModel = LoadModelFromString();
-
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-            private const string filePath = @"OData ServiceCsdl.xml";
-
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-            public static global::Microsoft.OData.Edm.IEdmModel GetInstance()
-            {
-                return ParsedModel;
-            }
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-            private static global::Microsoft.OData.Edm.IEdmModel LoadModelFromString()
-            {
-                global::System.Xml.XmlReader reader = CreateXmlReader();
-                try
-                {
-                    global::System.Collections.Generic.IEnumerable<global::Microsoft.OData.Edm.Validation.EdmError> errors;
-                    global::Microsoft.OData.Edm.IEdmModel edmModel;
-
-                    if (!global::Microsoft.OData.Edm.Csdl.CsdlReader.TryParse(reader, true, out edmModel, out errors))
-                    {
-	                    global::System.Text.StringBuilder errorMessages = new global::System.Text.StringBuilder();
-	                    foreach (var error in errors)
-	                    {
-		                    errorMessages.Append(error.ErrorMessage);
-		                    errorMessages.Append("; ");
-	                    }
-	                    throw new global::System.InvalidOperationException(errorMessages.ToString());
-                    }
-
-                    return edmModel;
-                }
-                finally
-                {
-                    ((global::System.IDisposable)(reader)).Dispose();
-                }
-            }
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-            private static global::System.Xml.XmlReader CreateXmlReader(string edmxToParse)
-            {
-                return global::System.Xml.XmlReader.Create(new global::System.IO.StringReader(edmxToParse));
-            }
-
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
-            private static global::System.Xml.XmlReader CreateXmlReader()
-            {
-                try
-                {
-                    var assembly = global::System.Reflection.Assembly.GetExecutingAssembly();
-                    var resourcePath = global::System.Linq.Enumerable.Single(assembly.GetManifestResourceNames(), str => str.EndsWith(filePath));
-                    global::System.IO.Stream stream = assembly.GetManifestResourceStream(resourcePath);
-                    return global::System.Xml.XmlReader.Create(new global::System.IO.StreamReader(stream));
-                }
-                catch(global::System.Xml.XmlException e)
-                {
-                    throw new global::System.Xml.XmlException("Failed to create an XmlReader from the stream. Check if the resource exists.", e);
-                }
-            }
+            return new global::Learning.OData.Entities.CitySingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
         }
     }
 }

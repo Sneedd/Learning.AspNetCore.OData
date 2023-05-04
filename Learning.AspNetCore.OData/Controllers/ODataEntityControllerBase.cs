@@ -20,14 +20,14 @@ namespace Learning.AspNetCore.OData.Controllers
             this.DbContext = context;
         }
 
-        [HttpGet]
+        //[HttpGet]
         [EnableQuery]
         public IQueryable<Tentity> Get()
         {
             return this.DbContext.Set<Tentity>();
         }
 
-        [HttpGet]
+        //[HttpGet]
         [EnableQuery]
         public SingleResult<Tentity> Get([FromODataUri] int key)
         {
@@ -37,6 +37,10 @@ namespace Learning.AspNetCore.OData.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Tentity entity)
         {
+            if (entity.Id == 0)
+            {
+                entity.Id = this.DbContext.Set<Tentity>().Max(a => a.Id) + 1;
+            }
             this.DbContext.Add(entity);
             this.DbContext.SaveChanges();
             return this.Created(entity);
