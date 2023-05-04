@@ -22,9 +22,10 @@ namespace Learning.AspNetCore.OData.Controllers
 
         //[HttpGet]
         [EnableQuery]
-        public IQueryable<Tentity> Get()
+        public IQueryable<Tentity> Get(ODataQueryOptions<Tentity> options)
         {
-            return this.DbContext.Set<Tentity>();
+            var queryable = this.DbContext.Set<Tentity>();
+            return (IQueryable<Tentity>)options.ApplyTo(queryable);
         }
 
         //[HttpGet]

@@ -1,7 +1,7 @@
-﻿using Learning.OData.Entities;
-using System;
+﻿using System;
 using System.Linq;
-using System.Net.Http;
+using Default;
+using Learning.AspNetCore.OData.Entities;
 
 namespace Learning.OData.Client
 {
