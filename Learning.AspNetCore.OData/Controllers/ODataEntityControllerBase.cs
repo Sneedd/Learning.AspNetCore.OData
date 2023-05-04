@@ -20,7 +20,10 @@ namespace Learning.AspNetCore.OData.Controllers
             this.DbContext = context;
         }
 
-        //[HttpGet]
+        /// <remarks>
+        /// <see href="https://learn.microsoft.com/en-us/odata/webapi-8/fundamentals/query-options#applying-query-options-directly"/>
+        /// </remarks>
+        [HttpGet]
         [EnableQuery]
         public IQueryable<Tentity> Get(ODataQueryOptions<Tentity> options)
         {
@@ -28,7 +31,7 @@ namespace Learning.AspNetCore.OData.Controllers
             return (IQueryable<Tentity>)options.ApplyTo(queryable);
         }
 
-        //[HttpGet]
+        [HttpGet]
         [EnableQuery]
         public SingleResult<Tentity> Get([FromODataUri] int key)
         {
