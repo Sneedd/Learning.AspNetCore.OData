@@ -1,10 +1,12 @@
-﻿using Learning.AspNetCore.OData.Entities;
-using Microsoft.AspNet.OData;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
+﻿using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
+using Learning.AspNetCore.OData.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Deltas;
+using Microsoft.AspNetCore.OData.Formatter;
+using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.OData.Results;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
 
 namespace Learning.AspNetCore.OData.Controllers
 {
@@ -33,7 +35,7 @@ namespace Learning.AspNetCore.OData.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Tentity entity)
+        public IActionResult Post([FromBody] Tentity entity)
         {
             this.DbContext.Add(entity);
             this.DbContext.SaveChanges();
@@ -41,7 +43,7 @@ namespace Learning.AspNetCore.OData.Controllers
         }
 
         [HttpPatch]
-        public IActionResult Patch(int key, Delta<Tentity> delta)
+        public IActionResult Patch([FromODataUri] int key, Delta<Tentity> delta)
         {
             Tentity entity = this.DbContext.Find<Tentity>(key);
             delta.CopyChangedValues(entity);
@@ -50,8 +52,16 @@ namespace Learning.AspNetCore.OData.Controllers
             return this.Updated(entity);
         }
 
+        [HttpPut]
+        public IActionResult Put([FromODataUri] int key, [FromBody] Tentity entity)
+        {
+            this.DbContext.Update(entity);
+            this.DbContext.SaveChanges();
+            return this.Updated(entity);
+        }
+
         [HttpDelete]
-        public IActionResult Delete(Tentity entity)
+        public IActionResult Delete([FromBody] Tentity entity)
         {
             this.DbContext.Remove(entity);
             this.DbContext.SaveChanges();

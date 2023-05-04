@@ -1,19 +1,13 @@
 using Learning.AspNetCore.OData.Entities;
-using Microsoft.AspNet.OData.Builder;
-using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OData.Edm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.OData.ModelBuilder;
 
 namespace Learning.AspNetCore.OData
 {
@@ -26,35 +20,38 @@ namespace Learning.AspNetCore.OData
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<EntityDbContext>(options =>
             {
-                string tempDb = @"C:\temp\world.db";
-                options.UseSqlite($"DataSource={tempDb}");
+                options.UseInMemoryDatabase("demo");
+                //options.UseSqlite($"DataSource=C:\\temp\\world.db");
             });
-            services.AddOData();
-            services.AddControllers();
+            services.AddControllers()
+                .AddOData(options =>
+                {
+                    options.AddRouteComponents("odata", this.CreateModel());
+                    options.Select().Filter().OrderBy().Expand().Count();
+                });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseODataRouteDebug();
             }
 
-            app.UseRouting();
+            app.UseODataBatching();
 
+            app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapODataRoute("countryRoute", "odata", this.CreateModel());
-                endpoints.Select().Filter().OrderBy().Expand().Count();
             });
         }
 
@@ -62,9 +59,9 @@ namespace Learning.AspNetCore.OData
         {
             var builder = new ODataConventionModelBuilder();
             builder.Namespace = "Learning.OData.Entities";
-            builder.EntitySet<Continent>("Continent");
-            builder.EntitySet<Country>("Country");
-            builder.EntitySet<City>("City");
+            builder.EntitySet<Continent>("Continents");
+            builder.EntitySet<Country>("Countries");
+            builder.EntitySet<City>("Cities");
             return builder.GetEdmModel();
         }
     }

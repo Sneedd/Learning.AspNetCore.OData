@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Learning.AspNetCore.OData.Entities
@@ -14,6 +15,7 @@ namespace Learning.AspNetCore.OData.Entities
         public int Id { get; set; }
 
         [Column("Name")]
+        [JsonPropertyName("Name")]
         public string Name { get; set; }
 
         [Column("ContinentId")]

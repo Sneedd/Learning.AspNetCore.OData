@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Learning.AspNetCore.OData.Controllers
 {
-    public class CountryController : ODataEntityControllerBase<Country>
+    public class CountriesController : ODataEntityControllerBase<Country>
     {
-        public CountryController(EntityDbContext context) 
+        public CountriesController(EntityDbContext context) 
             : base(context)
         {
         }
